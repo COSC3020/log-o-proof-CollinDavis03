@@ -16,7 +16,7 @@ $T(n) \in O(f(n)) \iff \exists c, n_0: T(n) \leq c \cdot f(n) \forall n \geq n_0
 
 **Step 1: Show $log_{2n} \in O(log_{5} n)$**
 
-$log_{2} = (log_{5}n)/(log_{5}2$
+$log_{2} = (log_{5}n)/(log_{5}2)$
 
 let c = $1 / (log_{5} 2)$ Then: 
 
