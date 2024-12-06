@@ -18,7 +18,7 @@ $T(n) \in O(f(n)) \iff \exists c, n_0: T(n) \leq c \cdot f(n) \forall n \geq n_0
 
 For a function $T(n)$, we can say $T(n) \in O(f(n))$ if: 
 
-$\exists c > 0, n_{0} > 0 such that T(n) \leq c * f(n), \forall n \geq n_0$
+$\exists c > 0, n_{0} > 0$ such that $T(n) \leq c * f(n), \forall n \geq n_0$
 
 **Step 1: Show $log_{2} n \in O(log_{5} n)$**
 
