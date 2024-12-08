@@ -20,35 +20,58 @@ For a function $T(n)$, we can say $T(n) \in O(f(n))$ if:
 
 $\exists c > 0, n_{0} > 0$ such that $T(n) \leq c * f(n), \forall n \geq n_0$
 
-**Step 1: Show $log_{2} n \in O(log_{5} n)$**
+**Step 1: Show $T(n) \in O(log_{5}n) \rightarrow T(n) \in O(log_{2}n)$**
 
-$log_{2} n = (log_{5}n)/(log_{5}2)$
+1. Assume $T(n) \in O(log_{5}n$. By definition, there exists constants $c > 0$ and $n_{0} > 0$ 
 
-let c = $1 / (log_{5} 2)$ Then: 
+$T(n) \leq c * log_{5} n, \forall n \geq n_{0}$ 
 
-$log_{2}n \leq c * log_{5}n$ 
+2. Using the base-change formula for logarithms:
 
-Since c is constant that would make $log_{5} 2$ a constant. By definition of O, there exists a constant such that $log_{2} n \leq c * log_{5} n$. Thus making: 
+   $log_{5} n = (log_{2} n) / (log_{2} 5)$
 
-Thus by the definition of Big O, $log_{2}n \in O(log_{5}n)$ 
+   Substituting this into the inequality:
 
-**Step 2: Show $log_{5}n \in O(log_{2}n)$**
+   $T(n) \leq c * ((log_{2} n) / (log_{2} 5))$
 
-$log_{5}n = (log_{2}n)/(log_{2}5)$
+3. Let $c' = (c) / (log_{2} 5)$ , where $c'$ is a constant because $log_{2} 5$ is constant.
 
-let c = $1 / (log_{2}5)$ Then: 
+   Then:
+         $T(n) \leq c' * log_{2} n, \forall n \geq n_{0}$
 
-$log_{5} n \leq c * log_{2} n$. 
+4. By definition of Big O, $T(n) \in O(log_{2} n)$.
 
-With $log_{2} 5$ being a constant then by definition of O, there exists a constant c > 0 such that $log_{5} n \leq c * log_{2} n$ Thus: 
+**Step 2: Show $T(n) \in O(log_{2}n) \rightarrow T(n) \in O(log_{5}n)$**
 
-Thus by the definition of Big O, $log_{5} n \in O(log_{2} n)$ 
+ 1. Assume $T(n) \in O(log_{2}n$. By definition, there exists constants $c > 0$ and $n_{0} > 0$ 
 
-**Conclusion:**
+$T(n) \leq c * log_{2} n, \forall n \geq n_{0}$ 
 
-Since both $log_{2} n \in O(log_{5} n)$ and $log_{5} n \in O(log_{2} n)$ we can conclude that 
+2. Using the base-change formula for logarithms:
 
-$O(log_{2} n) = O(log_{5} n)$. 
+   $log_{2} n = (log_{5} n) / (log_{5} 2)$
+
+   Substituting this into the inequality:
+
+   $T(n) \leq c * ((log_{5} n) / (log_{5} 2))$
+
+3. Let $c' = (c) / (log_{5} 2)$ , where $c'$ is a constant because $log_{5} 2$ is constant.
+
+   Then:
+         $T(n) \leq c' * log_{5} n, \forall n \geq n_{0}$
+
+4. By definition of Big O, $T(n) \in O(log_{5} n)$.
+
+**Conclusion:** 
+From steps 1 and 2, we have shown that: 
+
+  $T(n) \in O(log_{5} n) <-> T(n) \in O(log_{2} n)$
+
+This implies: 
+
+  $O(log_{2} n) = O(log_{5} n)$
+
+Thus, the logarithm base does not affect an algorithm's asymptotic complexity, as the difference is only a constant factor. 
 
 ## Sources 
 I looked at AaronATM's repo to see how to get started. I borrowed nothing from him just how he started the problem. 
